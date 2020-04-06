@@ -1,0 +1,17 @@
+const assert = require('assert');
+
+function multiply(number) {
+  let sum = number
+  return function base(baseNumber) {
+    if (baseNumber) {
+      sum *= baseNumber
+      return base
+    } else {
+      return sum
+    }
+  }
+}
+
+assert.strictEqual(multiply(2)(3)(5)(2)(),60,"function should multiply with 4 params")
+assert.strictEqual(multiply(2)(3)(5)(2)(3)(2)(),360,"function should multiply with 6 params")
+console.log("tests are passed")
