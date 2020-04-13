@@ -1,0 +1,31 @@
+// custom bind with "black Jack" 
+
+function mul(a,b) {
+  return a * b
+}
+
+/**
+ * Bind as a function, returns bind function
+ * @param func Function to bind
+ * @param context Context to bind
+ * @param args Arguments
+ * @returns {function(...[*]): *}
+ */
+const bind2 = function(func,context,...args){
+  return (...args2)=>{
+    return func.apply(context,[...args2,...args])
+  }
+}
+
+/**
+ * Bind as built in function, returns bind function  
+ * @param context Context to bind
+ * @param args Arguments
+ * @returns {function(...[*]): *}
+ */
+Function.prototype.bind3 = function (context,...args){
+  return (...args2)=> this.apply(context,[...args2,...args])
+}
+
+console.log(bind2(mul, null, 2)(4)) //  8
+console.log(mul.bind3(null, 2)(7))  //14
