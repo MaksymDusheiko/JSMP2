@@ -13,7 +13,7 @@ class Circle extends Figure {
         return 2 * Math.PI * this.radius;
     };
 
-    getSquare() {
+    getArea() {
         return (Math.PI * Math.pow(this.radius, 2)) / 2;
     };
 }
