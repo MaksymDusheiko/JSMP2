@@ -3,7 +3,7 @@ export class Point {
     y: number;
     name: string;
 
-    constructor(name, x, y) {
+    constructor(y, x, name) {
         this.x = x;
         this.y = y;
         this.name = name

@@ -14,10 +14,10 @@ class Rectangle extends Quadrangle {
 }
 
 
-class Square extends Rectangle {
+export class Square extends Rectangle {
 
     constructor(points: Point[]) {
-        super("Square", points);
+        super( points,"Square");
     }
 
     getArea() {
@@ -25,10 +25,10 @@ class Square extends Rectangle {
     };
 }
 
-class Diamond extends Quadrangle {
+export class Diamond extends Quadrangle {
 
     constructor(points: Point[]) {
-        super("Diamond", points);
+        super( points,"Diamond");
     }
 
     getArea() {

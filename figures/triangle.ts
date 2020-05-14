@@ -1,31 +1,31 @@
 import {Point} from "./point";
 import {Figure} from "./figure";
 
-class Triangle extends Figure {
-
+export class Triangle extends Figure {
+    constructor(points: Point[], name = 'Arbitrary triangle') {
+        super(points, name);
+    }
     getArea() {
         const p = this.getPerimeter() / 2;
         return Math.sqrt(p * (p - this.sides[0]) * (p - this.sides[1]) * (p - this.sides[2]))
     };
 }
 
-
-class Isosceles extends Triangle {
+export class Isosceles extends Triangle {
     constructor(points: Point[]) {
-        super('Isosceles', points);
+        super(points, 'Isosceles');
     }
 }
 
-class Equilateral extends Triangle {
+export class Equilateral extends Triangle {
     constructor(points: Point[]) {
-        super('Isosceles', points);
+        super(points, 'Equilateral');
     }
-
 }
 
-class Rectangular extends Triangle {
+export class Rectangular extends Triangle {
     constructor(points: Point[]) {
-        super('Isosceles', points);
+        super(points, 'Rectangular');
     }
 
 }

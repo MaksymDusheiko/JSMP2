@@ -1,11 +1,11 @@
 import {Point} from "./point";
 import {Figure} from "./figure";
 
-class Circle extends Figure {
+export class Circle extends Figure {
     radius: number;
 
-    constructor(name, points: Point[], radius: number) {
-        super(name, points);
+    constructor(points: Point[], radius: number) {
+        super(points, "Circle");
         this.radius = radius;
     }
 

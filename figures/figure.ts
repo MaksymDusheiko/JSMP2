@@ -5,10 +5,14 @@ export class Figure {
     points: Point[];
     sides: number[];
 
-    constructor(name, points: Point[]) {
+    constructor(points: Point[], name) {
         this.name = name;
         this.points = points;
-        this.calculateSides()
+        this.calculateSides();
+    }
+
+    getType() {
+        return this.name
     }
 
     getLine(p1: Point, p2: Point): number {
@@ -23,15 +27,17 @@ export class Figure {
     };
 
     private calculateSides() {
+        const sides = [];
         if (this.points.length > 1) {
-            this.points.reduce((prev, curent) => {
-                    this.sides.push(this.getLine(prev, curent));
-                    return curent
+            this.points.reduce((prev, current, index) => {
+                    sides[index - 1] = this.getLine(prev, current);
+                    return current
                 }
             )
         } else {
-            this.sides.push(0);
+            sides.push(0);
         }
+        this.sides = sides;
 
     }
 }
