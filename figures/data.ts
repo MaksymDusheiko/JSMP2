@@ -32,16 +32,16 @@ export const data = {
         },
     },
 
-    rectangles:{
-        square:{
+    rectangles: {
+        square: {
             points: [
-                new Point(5, 2, 'a'),
-                new Point(5, 5, 'b'),
-                new Point(1, 5, 'c'),
-                new Point(1, 2, 'd'),
+                new Point(5, 5, 'a'),
+                new Point(5, 10, 'b'),
+                new Point(0, 10, 'c'),
+                new Point(0, 5, 'd'),
             ],
         },
-        diamond:{
+        diamond: {
             points: [
                 new Point(5, 1, 'a'),
                 new Point(8, 3, 'b'),

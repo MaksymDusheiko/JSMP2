@@ -6,9 +6,13 @@ export class Figure {
     sides: number[];
 
     constructor(points: Point[], name) {
+        if (this.constructor === Figure) {
+            throw new Error(`You are not allowed to create an abstract class`)
+        }
         this.name = name;
         this.points = points;
         this.calculateSides();
+        console.log(`${this.name} created`)
     }
 
     getType() {
@@ -20,7 +24,7 @@ export class Figure {
     }
 
     getPerimeter(): number {
-        return this.sides.reduce((prev, cur) => prev + cur);
+        return +this.sides.reduce((prev, cur) => prev + cur).toFixed(2);
     };
 
     getArea() {
@@ -30,10 +34,10 @@ export class Figure {
         const sides = [];
         if (this.points.length > 1) {
             this.points.reduce((prev, current, index) => {
-                    sides[index - 1] = this.getLine(prev, current);
+                    sides[index] = +this.getLine(prev, current).toFixed(2);
                     return current
                 }
-            )
+                , this.points[this.points.length - 1])
         } else {
             sides.push(0);
         }

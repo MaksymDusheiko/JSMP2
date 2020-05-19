@@ -17,7 +17,7 @@ class Rectangle extends Quadrangle {
 export class Square extends Rectangle {
 
     constructor(points: Point[]) {
-        super( points,"Square");
+        super(points, "Square");
     }
 
     getArea() {
@@ -28,12 +28,12 @@ export class Square extends Rectangle {
 export class Diamond extends Quadrangle {
 
     constructor(points: Point[]) {
-        super( points,"Diamond");
+        super(points, "Diamond");
     }
 
     getArea() {
-        const d1 = this.getLine(this.points[0], this.points[2]);
-        const d2 = this.getLine(this.points[1], this.points[3]);
-        return (d1 * d2) / 2;
+        const d1 = +this.getLine(this.points[0], this.points[2]).toFixed(2);
+        const d2 = +this.getLine(this.points[1], this.points[3]).toFixed(2);
+        return +((d1 * d2) / 2).toFixed(2);
     };
 }

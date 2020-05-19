@@ -1,7 +1,3 @@
-import {data} from "./data";
-
-
-
 import {Point} from "./point";
 import {Circle} from "./circle";
 import {Equilateral, Isosceles, Rectangular, Triangle} from "./triangle";
@@ -15,8 +11,8 @@ export const getFigure = (points: Point[], radius?) => {
         const b = getLine(points[1], points[2]);
         const c = getLine(points[2], points[0]);
         const sides = [a, b, c].sort(function (a, b) {
-            return b - a
-        }); // sides[0] - is hypotenuse
+            return b - a // sides[0] - is hypotenuse
+        });
 
         if (a === b && b === c) {
             return new Equilateral(points)
@@ -31,10 +27,9 @@ export const getFigure = (points: Point[], radius?) => {
     } else if (points.length === 4) {  // assuming that side length is correct
         const d1 = getLine(points[0], points[2]);
         const d2 = getLine(points[1], points[3]);
-        if (d1 ===d2){
-            return  new Square(points)
-        }
-        else{
+        if (d1 === d2) {
+            return new Square(points)
+        } else {
             return new Diamond(points)
         }
 

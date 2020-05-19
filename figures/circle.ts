@@ -10,10 +10,10 @@ export class Circle extends Figure {
     }
 
     getPerimeter() {
-        return 2 * Math.PI * this.radius;
+        return +(2 * Math.PI * this.radius).toFixed(2);
     };
 
     getArea() {
-        return (Math.PI * Math.pow(this.radius, 2)) / 2;
+        return +((Math.PI * Math.pow(this.radius, 2)) / 2).toFixed(2);
     };
 }

@@ -5,9 +5,10 @@ export class Triangle extends Figure {
     constructor(points: Point[], name = 'Arbitrary triangle') {
         super(points, name);
     }
+
     getArea() {
         const p = this.getPerimeter() / 2;
-        return Math.sqrt(p * (p - this.sides[0]) * (p - this.sides[1]) * (p - this.sides[2]))
+        return +Math.sqrt(p * (p - this.sides[0]) * (p - this.sides[1]) * (p - this.sides[2])).toFixed(2)
     };
 }
 
