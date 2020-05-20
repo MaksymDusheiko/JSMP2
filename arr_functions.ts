@@ -21,25 +21,21 @@ function filter(arr: any[], action): [] {
 }
 
 function some(arr: any[], action): boolean {
-    let result = false;
     for (let i = 0; i < arr.length; i++) {
         if (action(arr[i], i, arr)) {
-            result = true;
-            break
+            return true;
         }
     }
-    return result
+    return false
 }
 
 function every(arr: any[], action): boolean {
-    let result = true;
     for (let i = 0; i < arr.length; i++) {
         if (!action(arr[i], i, arr)) {
-            result = false;
-            break
+            return false;
         }
     }
-    return result
+    return false
 }
 
 function reduce(arr: any[], action, firstElement?) {
